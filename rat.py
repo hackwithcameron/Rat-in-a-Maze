@@ -1,5 +1,5 @@
-from maze import print_maze, create_blank,\
-    maze_1, maze_2, maze_3, maze_4
+from maze import print_maze, create_blank, \
+    test, example
 
 
 def rat(maze):
@@ -21,20 +21,34 @@ def rat(maze):
 
 
 def finish(pos, maze):
+    """
+    Checks if position is a valid spot before checking for finish
+    :param pos: Position of Rat
+    :param maze: Input maze
+    :return: True if position id valid and location is not finish.
+    """
     x, y = pos
-    if is_valid(maze, pos) is True:
+    if is_valid(maze, pos) is True:  # Make sure position is valid before checking for finish
         location = maze[x][y]
-        if location == 2:
+        if location == 2:  # If location is finish return True
             return True
 
 
 def find_path(maze, pos, solution):
+    """
+    Recursive function the finds path from start position to finish if possible.
+
+    :param maze: Input maze
+    :param pos: Position of Rat (start position = (0, 0))
+    :param solution: Solution for input maze
+    :return: Solution for maze or False
+    """
     x, y = pos  # Unpacks coordinates
-    if finish(pos, maze):
-        solution[x][y] = 1
+    if finish(pos, maze):  # Checks to see if rat is at finish
+        solution[x][y] = 1  # Sets position to 1 on solution showing complete path
         return True
-    if is_valid(maze, pos) is True and solution[x][y] != 1:
-        solution[x][y] = 1
+    if is_valid(maze, pos) is True and solution[x][y] != 1:  # Checks to see if position is valid and position is not
+        solution[x][y] = 1                                   # already in solution
         if find_path(maze, (x + 1, y), solution) is True:
             return True
         if find_path(maze, (x, y + 1), solution) is True:
@@ -55,4 +69,4 @@ def is_valid(maze, pos):
 
 
 if __name__ == "__main__":
-    rat(maze_4)
+    rat(example)
