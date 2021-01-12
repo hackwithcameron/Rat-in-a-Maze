@@ -12,7 +12,7 @@
 <hr>
 
 ## Overview:
-  This is a solution to the Rat-in-a-maze problem using a recursive funtion and the backtracking algorithm. The program takes in an input maze that can be any rectangular dimensions example: 4x4, 7x9, or 15x12. This does not find the shortest path. Most other solutions only include movement to be right or down, I included the ability to move in all directs to solve more complicated mazes. 
+  This is a solution to the Rat-in-a-maze problem using a recursive funtion and the backtracking algorithm. The program takes in an input maze that can be any rectangular dimensions example: 4x4, 7x9, or 15x12. This does not find the shortest path. Most other solutions only include movement to be right or down, I included the ability to move in all directs to solve more complicated mazes. For the examples below, the program starts in the top left corner and searchs for the 2 in the array.
 
 <hr>
 
